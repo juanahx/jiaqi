@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>掌中保</title>
+	<link rel="stylesheet" href="css/main.css?v=5" type="text/css"><link href="css/selectivity-full.css" rel="stylesheet">
+	<script src="js/zepto.min.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/selectivity-full.min.js"></script>
+	<link rel="stylesheet" href="/css/zepto.alert.css?v=1" type="text/css">
+	<script src="js/zepto.alert.js"></script>
+	<script src="js/main.js?v=9"></script>
+    <script src="js/mobiscroll.zepto.js" type="text/javascript"></script>
+	<script src="js/travelDetail.js?v=12"></script>
+	
+
+    <script src="js/mobiscroll.core.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.scroller.js" type="text/javascript"></script>
+
+    <script src="js/mobiscroll.datetime.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.select.js" type="text/javascript"></script>
+
+    <script src="js/mobiscroll.scroller.android.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.scroller.android-ics.js" type="text/javascript"></script>
+    <link href="css/mobiscroll.scroller.android-ics.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/mobiscroll.i18n.zh.js" type="text/javascript"></script>
+
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.sense-ui.css" rel="stylesheet" type="text/css" />
+
+
+	<script type="text/javascript">
+    		$(function () {
+            	// 设置时间
+            	setBeginEndDate();
+            	// 计算价格
+            	calculate();
+    		});
+            
+            function calculate() {            	
+            	var dateDiff = DateDiff($('.J-endDate').html(), $('.J-beginDate').html());
+            	var price = 0;
+            	if (dateDiff == 1) {
+            		price = 24;
+            	} else if (dateDiff == 2) {
+            		price = 27;
+            	} else if (dateDiff == 3) {
+            		price = 28;
+            	} else if (dateDiff == 4) {
+            		price = 30;
+            	}  else if (dateDiff == 5) {
+            		price = 31;
+            	}  else if (dateDiff == 6) {
+            		price = 33;
+            	}  else if (dateDiff == 7) {
+            		price = 34;
+            	}   else if (dateDiff == 8) {
+            		price = 40;
+            	}   else if (dateDiff == 9) {
+            		price = 47;
+            	}   else if (dateDiff == 10) {
+            		price = 51;
+            	}   else if (dateDiff == 11) {
+            		price = 53;
+            	}   else if (dateDiff == 12) {
+            		price = 57;
+            	}  else if (dateDiff == 13) {
+            		price = 58;
+            	}  else if (dateDiff == 14) {
+            		price = 61;
+            	}  else if (dateDiff == 15) {
+            		price = 61;
+            	}   else if (dateDiff == 16) {
+            		price = 63;
+            	}  else if (dateDiff == 17) {
+            		price = 65;
+            	}   else if (dateDiff == 18) {
+            		price = 68;
+            	}  else if (dateDiff == 19) {
+            		price = 70;
+            	}  else if (dateDiff == 20) {
+            		price = 70;
+            	}   else if (dateDiff == 21) {
+            		price = 72;
+            	}  else if (dateDiff == 22) {
+            		price = 72;
+            	}  else if (dateDiff == 23) {
+            		price = 76;
+            	}  else if (dateDiff == 24) {
+            		price = 77;
+            	}   else if (dateDiff == 25) {
+            		price = 78;
+            	}   else if (dateDiff == 26) {
+            		price = 81;
+            	}  else if (dateDiff == 27) {
+            		price = 85;
+            	}  else if (dateDiff == 28) {
+            		price = 86;
+            	}   else if (dateDiff == 29) {
+            		price = 90;
+            	}   else if (dateDiff == 30) {
+            		price = 91;
+            	}   else if (dateDiff == 31) {
+            		price = 91;
+            	}   else if (dateDiff == 32) {
+            		price = 93;
+            	}   else if (dateDiff == 33) {
+            		price = 96;
+            	}   else if (dateDiff == 34) {
+            		price = 97;
+            	}   else if (dateDiff == 35) {
+            		price = 99;
+            	}   else if (dateDiff == 36) {
+            		price = 102;
+            	}   else if (dateDiff == 37) {
+            		price = 104;
+            	}   else if (dateDiff == 38) {
+            		price = 106;
+            	}   else if (dateDiff == 39) {
+            		price = 108;
+            	}   else if (dateDiff == 40) {
+            		price = 109;
+            	}   else if (dateDiff == 41) {
+            		price = 112;
+            	}   else if (dateDiff == 42) {
+            		price = 113;
+            	}   else if (dateDiff == 43) {
+            		price = 116;
+            	}   else if (dateDiff == 44) {
+            		price = 118;
+            	}   else if (dateDiff == 45) {
+            		price = 119;
+            	}   else if (dateDiff == 46) {
+            		price = 120;
+            	}   else if (dateDiff == 47) {
+            		price = 124;
+            	}   else if (dateDiff == 48) {
+            		price = 125;
+            	}   else if (dateDiff == 49) {
+            		price = 129;
+            	}   else if (dateDiff == 50) {
+            		price = 130;
+            	}   else if (dateDiff == 51) {
+            		price = 131;
+            	}   else if (dateDiff == 52) {
+            		price = 133;
+            	}   else if (dateDiff == 53) {
+            		price = 135;
+            	}   else if (dateDiff == 54) {
+            		price = 138;
+            	}   else if (dateDiff == 55) {
+            		price = 140;
+            	}   else if (dateDiff == 56) {
+            		price = 140;
+            	}   else if (dateDiff == 57) {
+            		price = 143;
+            	}   else if (dateDiff == 58) {
+            		price = 146;
+            	}   else if (dateDiff == 59) {
+            		price = 148;
+            	}   else if (dateDiff == 60) {
+            		price = 150;
+            	}   else if (dateDiff == 61) {
+            		price = 151;
+            	}   else if (dateDiff == 62) {
+            		price = 154;
+            	}   else if (dateDiff == 63) {
+            		price = 159;
+            	}   else if (dateDiff == 64) {
+            		price = 160;
+            	}   else if (dateDiff == 65) {
+            		price = 161;
+            	}   else if (dateDiff == 66) {
+            		price = 165;
+            	}   else if (dateDiff == 67) {
+            		price = 168;
+            	}   else if (dateDiff == 68) {
+            		price = 169;
+            	}   else if (dateDiff == 69) {
+            		price = 173;
+            	}   else if (dateDiff == 70) {
+            		price = 175;
+            	}   else if (dateDiff == 71) {
+            		price = 179;
+            	}   else if (dateDiff == 72) {
+            		price = 180;
+            	}   else if (dateDiff == 73) {
+            		price = 182;
+            	}   else if (dateDiff == 74) {
+            		price = 187;
+            	}   else if (dateDiff == 75) {
+            		price = 190;
+            	}   else if (dateDiff == 76) {
+            		price = 193;
+            	}   else if (dateDiff == 77) {
+            		price = 196;
+            	}   else if (dateDiff == 78) {
+            		price = 199;
+            	}   else if (dateDiff == 79) {
+            		price = 203;
+            	}   else if (dateDiff == 80) {
+            		price = 208;
+            	}   else if (dateDiff == 81) {
+            		price = 210;
+            	}   else if (dateDiff == 82) {
+            		price = 215;
+            	}   else if (dateDiff == 83) {
+            		price = 219;
+            	}   else if (dateDiff == 84) {
+            		price = 222;
+            	}   else if (dateDiff == 85) {
+            		price = 226;
+            	}   else if (dateDiff == 86) {
+            		price = 230;
+            	}   else if (dateDiff == 87) {
+            		price = 234;
+            	}   else if (dateDiff == 88) {
+            		price = 238;
+            	}   else if (dateDiff == 89) {
+            		price = 242;
+            	}   else if (dateDiff == 90) {
+            		price = 247;
+            	}   else if (dateDiff == 91) {
+            		price = 247;
+            	}   else if (dateDiff == 92) {
+            		price = 247;
+            	}   else if (dateDiff == 93) {
+            		price = 249;
+            	}   else if (dateDiff == 94) {
+            		price = 250;
+            	}   else if (dateDiff == 95) {
+            		price = 250;
+            	}   else if (dateDiff == 96) {
+            		price = 250;
+            	}   else if (dateDiff == 97) {
+            		price = 250;
+            	}   else if (dateDiff == 98) {
+            		price = 251;
+            	}   else if (dateDiff == 99) {
+            		price = 251;
+            	}   else if (dateDiff == 100) {
+            		price = 251;
+            	}   else if (dateDiff == 101) {
+            		price = 252;
+            	}   else if (dateDiff == 102) {
+            		price = 254;
+            	}   else if (dateDiff == 103) {
+            		price = 254;
+            	}   else if (dateDiff == 104) {
+            		price = 255;
+            	}   else if (dateDiff == 105) {
+            		price = 255;
+            	}   else if (dateDiff == 106) {
+            		price = 256;
+            	}   else if (dateDiff == 107) {
+            		price = 256;
+            	}   else if (dateDiff == 108) {
+            		price = 257;
+            	}   else if (dateDiff == 109) {
+            		price = 256;
+            	}   else if (dateDiff == 110) {
+            		price = 256;
+            	}   else if (dateDiff == 111) {
+            		price = 258;
+            	}   else if (dateDiff == 112) {
+            		price = 258;
+            	}   else if (dateDiff == 113) {
+            		price = 258;
+            	}   else if (dateDiff == 114) {
+            		price = 258;
+            	}   else if (dateDiff == 115) {
+            		price = 260;
+            	}   else if (dateDiff == 116) {
+            		price = 261;
+            	}   else if (dateDiff == 117) {
+            		price = 261;
+            	}   else if (dateDiff == 118) {
+            		price = 263;
+            	}   else if (dateDiff == 119) {
+            		price = 262;
+            	}   else if (dateDiff == 120) {
+            		price = 264;
+            	}   else if (dateDiff == 121) {
+            		price = 264;
+            	}   else if (dateDiff == 122) {
+            		price = 264;
+            	}   else if (dateDiff == 123) {
+            		price = 266;
+            	}   else if (dateDiff == 124) {
+            		price = 266;
+            	}   else if (dateDiff == 125) {
+            		price = 266;
+            	}   else if (dateDiff == 126) {
+            		price = 266;
+            	}   else if (dateDiff == 127) {
+            		price = 266;
+            	}   else if (dateDiff == 128) {
+            		price = 268;
+            	}   else if (dateDiff == 129) {
+            		price = 270;
+            	}   else if (dateDiff == 130) {
+            		price = 270;
+            	}   else if (dateDiff == 131) {
+            		price = 270;
+            	}   else if (dateDiff == 132) {
+            		price = 271;
+            	}   else if (dateDiff == 133) {
+            		price = 271;
+            	}   else if (dateDiff == 134) {
+            		price = 271;
+            	}   else if (dateDiff == 135) {
+            		price = 272;
+            	}   else if (dateDiff == 136) {
+            		price = 273;
+            	}   else if (dateDiff == 137) {
+            		price = 274;
+            	}   else if (dateDiff == 138) {
+            		price = 273;
+            	}   else if (dateDiff == 139) {
+            		price = 274;
+            	}   else if (dateDiff == 140) {
+            		price = 276;
+            	}   else if (dateDiff == 141) {
+            		price = 276;
+            	}   else if (dateDiff == 142) {
+            		price = 276;
+            	}   else if (dateDiff == 143) {
+            		price = 277;
+            	}   else if (dateDiff == 144) {
+            		price = 277;
+            	}   else if (dateDiff == 145) {
+            		price = 279;
+            	}   else if (dateDiff == 146) {
+            		price = 279;
+            	}   else if (dateDiff == 147) {
+            		price = 281;
+            	}   else if (dateDiff == 148) {
+            		price = 281;
+            	}   else if (dateDiff == 149) {
+            		price = 281;
+            	}   else if (dateDiff == 150) {
+            		price = 282;
+            	}   else if (dateDiff == 151) {
+            		price = 282;
+            	}   else if (dateDiff == 152) {
+            		price = 283;
+            	}   else if (dateDiff == 153) {
+            		price = 283;
+            	}   else if (dateDiff == 154) {
+            		price = 283;
+            	}   else if (dateDiff == 155) {
+            		price = 285;
+            	}   else if (dateDiff == 156) {
+            		price = 286;
+            	}   else if (dateDiff == 157) {
+            		price = 286;
+            	}   else if (dateDiff == 158) {
+            		price = 286;
+            	}   else if (dateDiff == 159) {
+            		price = 287;
+            	}   else if (dateDiff == 160) {
+            		price = 287;
+            	}   else if (dateDiff == 161) {
+            		price = 289;
+            	}   else if (dateDiff == 162) {
+            		price = 290;
+            	}   else if (dateDiff == 163) {
+            		price = 292;
+            	}   else if (dateDiff == 164) {
+            		price = 292;
+            	}   else if (dateDiff == 165) {
+            		price = 292;
+            	}   else if (dateDiff == 166) {
+            		price = 294;
+            	}   else if (dateDiff == 167) {
+            		price = 294;
+            	}   else if (dateDiff == 168) {
+            		price = 294;
+            	}   else if (dateDiff == 169) {
+            		price = 294;
+            	}   else if (dateDiff == 170) {
+            		price = 295;
+            	}   else if (dateDiff == 171) {
+            		price = 297;
+            	}   else if (dateDiff == 172) {
+            		price = 296;
+            	}   else if (dateDiff == 173) {
+            		price = 298;
+            	}   else if (dateDiff == 174) {
+            		price = 298;
+            	}   else if (dateDiff == 175) {
+            		price = 298;
+            	}   else if (dateDiff == 176) {
+            		price = 300;
+            	}   else if (dateDiff == 177) {
+            		price = 300;
+            	}   else if (dateDiff == 178) {
+            		price = 300;
+            	}   else if (dateDiff == 179) {
+            		price = 302;
+            	}   else if (dateDiff == 180) {
+            		price = 304;
+            	}
+            	price = price * 90 / 100;
+            	price = formatCurrencyTenThou(price);
+            	$('#moneyEm').text(price);
+            }
+
+       
+    
+    function changeBeginDate(vl){
+    	var now = new Date();
+    	// 和当前时间做比较
+    	var time = dateAddExec(now, 1);
+    	var dateDiff = DateDiff(vl, time.format("yyyy-MM-dd"));
+    	if ( dateDiff >= 0 && dateDiff <= 365 ){
+    		//dateDiff = DateDiff($('.J-endDate').html(), vl);
+    		//if (dateDiff >=0 )
+   			$(".J-beginDate").text(vl);
+   			//失效时间默认加1
+   			var addDate = dateAdd(vl, 1);
+   			$(".J-endDate").text(addDate.format("yyyy-MM-dd"));
+   			// 计算价格
+           	calculate();
+    			
+    		//else
+    		//	showMessageDialog('开始时间要小于结束时间');
+    	} else {
+    		showMessageDialog('开始时间在明天开始1年内');
+    	}
+    }
+    
+    function changeEndDate(vl){
+    	var dateDiff = DateDiff(vl, $(".J-beginDate").text());
+    	if ( dateDiff >= 0 && dateDiff <= 180 ){
+    		$(".J-endDate").text(vl);
+    		calculate();
+    	} else {
+    		showMessageDialog('结束时间在开始时间180天内');
+    	}
+    }
+    
+    
+    function changeSr(vl){
+    	$("#change-z").val(selectIdentify(vl));
+    	if (vl != "1" && vl != "0"){
+   			$('#birthdaySelect').css('display','block'); 
+   			$('#gendar').css('display','block');
+//    			var now = new Date();
+//    			now.setFullYear(1980);
+//    			now.setMonth(0);
+//    			now.setDate(1);
+   			$("#txtbirthday").val("");
+//    		    $("#dateBirthday").val(now.format('yyyy-MM-dd'));
+   		    
+   		 	$("#txtGendar").val("");
+//    		 	$("#selGendar").find("option[value='1']").attr("selected",true);
+		    //$("#selGendar").select(1);
+    	} else {
+			$('#birthdaySelect').css('display','none'); 
+			$('#gendar').css('display','none'); 
+		}
+    }
+    function changeBirthday(val){
+    	//if ( checkBirthday(val) ){
+    		$("#txtbirthday").val(val);
+    	//}
+    }
+    function changeSex(sex){
+    	if ( sex == "1"){
+    		$("#txtGendar").val("男");
+    	} else if ( sex == "2"){
+    		$("#txtGendar").val("女");
+    	} else {
+    		$("#txtGendar").val("");
+    	}
+    }    
+    
+    
+    </script>
+</head>
+<body class="g-bg J-bd body-gray">
+	
+	
+	<!-- header -->
+	<header id="header">
+		<div class="m-hd">
+			<p>境外旅行险</p>
+			<div class="m-io J-mu">
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+			<a href="/loginOnlineStore?act=myinsurance" class="m-us"></a>
+		</div>
+	</header>
+	<!-- End header -->
+
+
+	<!-- main -->
+	<section id="travelDetail">
+		<div class="J-heis">
+		<div class="m-tdl fixed">
+			<div class="m-lvv J-vv">
+				<ul>
+					<li>
+						<p><img src="img/international_traval.png" alt="" /></p>
+						<i></i>
+						<span>万国游历，安心游世界</span>
+					</li>
+				</ul>
+			</div>	
+
+			<div class="login-form">
+
+				<div class="travel-detail">
+					<ul>
+						<li class="fixed" id="showAssuranceInfoButton">
+							<p>意外身故或伤残10万元</p>
+							<p>意外伤害或急性病医疗3万元</p>
+							<p>境外顶级紧急救援服务</p>
+							<div><i></i></div>
+							<input type="hidden" id="moneySelect" value="10">
+						</li>
+						<li class="fixed">
+							<span><i class="J-beginDate">2015-12-17</i>
+							<input id="beignMeeting" type="date" value="2015-12-17" class="m-op-o" onchange="changeBeginDate(this.value)"/></span>
+							<p>生效日期</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span><i class="J-endDate">2015-12-17</i>
+							<input id="endMeeting" type="date" value="2015-12-17" class="m-op-o" onchange="changeEndDate(this.value)"/></span>
+							<p>结束日期</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span> <em id="moneyEm">21.6</em> 元</span>
+							<p>支付金额</p>
+						</li>
+						<li class="fixed">
+							<span class="check" style="float:left" id="agreecheck"></span>
+							<span style="float:left;margin-left:-14px;">同意<a href="policy/travelOffshorePolicy.html">《保险条款》</a></span>
+							<span style="float:left;margin-left:-20px;">,<a href="#assurance">《投保须知》</a></span>
+							<span style="float:left;margin-left:24px;">及<a href="#jubaodiqu">《拒保地区》</a></span>
+						</li>					
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="h-64"></div>
+		<div class="m-fx">
+			<button id="showGuarantorInfoButton"  class="b-btn ma_4">立即投保</button>
+		</div>
+	</section>
+	<!-- End main -->
+	<section id="assuranceInfo">
+		<div>
+			<div class="assurance p-detail">
+				<br/>
+				<h1>产品特色：</h1>
+				<p>本产品适合出生90天至75周岁在中国大陆地区以外的国家或地区（含港澳台地区）旅游的客户，是一款保障全面的旅行意外险；<br>
+				较普通旅行综合意外保险，价格更低，保障更高，适用于跟团以及自由行（如自由行、度假、出差等本产品均适用）；<br>
+				意外伤害或急性病医疗保险金无免赔额，且给付比例高达100%；<br>
+				自由选择投保时间，最长180天；<br>
+				由全球最大最具经验的AXA-ASSISTANCE提供紧急救援服务；<br>
+				投保地域无限制，无论您是来自大陆、来自港澳台还是来自境外，只要您持有合法证件，皆可投保；<br>
+				投保手续简单快捷，无需体检。<br>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>提供保障：</h1>
+				<p>意外身故：按保额赔付，最高赔付10万元；<br>
+				意外伤残：根据伤残等级按比例赔付，最高赔付10万元；<br>
+				意外伤害或急性病医疗：3万元（无免赔额，赔付100%；含急性病10%，紧急门诊1%，牙科门诊5%）；<br>
+				AXA境外紧急救援电话：8610-84685868，服务如下：<br/>
+				1、	安排住院、紧急医疗转送：保额100000元；代垫住院医疗费用或保证金：保额最高以意外伤害或急性病医疗保险金为限；转送回居住地：保额100000元；安排亲属探病，往返经济舱机票：保额最高10000元；安排未成年子女返回居住地：回程经济舱机票，保额最高10000元；遗体或骨灰运送回国：保额100000元；就地安葬、火葬：保额最高8000元；遗体运送回国：灵柩费最高6000元；安排亲属往返处理后事：保额为往返经济舱机票，最高10000元。<br/>
+				2、	提供服务：紧急信息传递、病情观察及追踪、协助递送紧急医疗药品、旅游资讯咨询、旅游协助、行李遗失协助、护照遗失协助、电话医疗咨询、推荐医疗服务机构、文件传递服务、推荐翻译、秘书服务机构、推荐法律服务机构。<br/>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>投保须知：</h1>
+				<p>1、本产品适用于中国大陆以外的国家或地区（含港澳台）；<br/>
+					2、投保人与被保险人须为同一人，年龄为90天至75周岁；<br/>
+					3、本产品报送文件编号：陆家嘴国泰人寿总[2014]62号-6；条款二维码编号：陆家嘴国泰人寿[2014]意外伤害保险089号；<br/>
+					4、购买前请详细阅读保险条款，尤其是责任免除条款、免赔额、免赔率、比例赔付或给付等免除或减轻我司责任的条款；<br/>
+					5、因网络投保的特殊性，受益人限定为被保险人的法定继承人（意为依法定继承顺序确定受益人），请您购买前慎重考虑；<br/>
+					6、本公司总部设于上海，在北京、浙江、江苏、广东、福建、山东、辽宁、天津设有省级分公司。非以上地区的客户，可能存在服务不到位、时效差等问题，敬请见谅；<br/>
+					7、保险费通过微信支付方式一次性缴纳。若您需要开具保险发票，请拨打客服热线400-886-9899申请，我们将通过挂号信免费寄送发票；若要求快递寄送，则运费由投保人承担；<br/>
+					8、本合同采用电子保单形式承保，电子保单会发送到您投保时所留的电子邮箱，您也可以通过登录我司官方网站www.cathaylife.cn查询保单；<br/>
+					9、投保、承保、保全、理赔、退保的办理流程如下：<br/>
+					（1）投保：投保人选择需要的保险计划，详细阅读保险条款、投保须知，并填写个人投保信息，核保通过后，投保人通过在线支付方式缴纳保费，保险合同成立；<br/>
+					（2）承保：实时接收客户投保信息，并由系统实时完成核保，核保通过且保费到账后保险合同成立；<br/>
+					（3）保全：投保人拨打客服热线400-886-9899申请保全，我们将尽快审核处理；<br/>
+					（4）理赔：出险后请尽快拨打客服热线400-886-9899报案，根据指示提交理赔资料，我们将审核案件，依照保险合同约定履行保险金给付义务。保险金将直接转账至被保险人/受益人名下的指定银行卡账户；<br/>
+					（5）退保：本产品为短期意外险，无犹豫期，具体退保事宜请详询我司各地服务中心；<br/>
+					10、我们将严格遵守现行的关于个人信息、数据及隐私保护的法律法规，采取充分的技术手段和制度管理，保护您提供给我们的个人信息、数据和隐私不受到非法的泄露或披露给未获授权的第三方。<br/>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>如实告知：</h1>
+				<p>我们就您和被保险人的有关情况提出询问，您应当如实告知；如果您故意或者因重大过失未履行前款规定的如实告知义务，足以影响我们决定是否同意承保或者提高保险费率的，我们有权解除本合同，并不承担给付保险金的责任。<br/>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>声明：</h1>
+				<p style="color: red">
+				我已详尽阅读并理解、接受保险条款、投保须知等文件，尤其是有关保险责任及责任免除条款、免赔额、免赔率、比例赔付等免除或减轻贵公司责任的条款，以及承保地域限制、未如实告知后果等条款。<br/>
+				</p>
+			</div>
+		</div>
+	</section>
+	
+	<section id="jubaodiqu">
+		<div>
+			<div class="assurance p-detail">
+				<br/>
+				<h1>拒保地区：</h1>
+				<p>A：(拼音首字母) <br/>
+					阿尔巴尼亚；<br/>
+					阿尔及利亚；<br/>
+					阿富汗；<br/>
+					阿塞拜疆；<br/>
+					埃及的开罗、尼罗河流域（明亚、亚西乌特、索哈杰、基纳）；<br/>
+					埃塞俄比亚；<br/>
+					安哥拉；<br/>
+					<br/>
+					B：<br/>
+					巴布亚新几内亚；<br/>
+					巴基斯坦的克什米尔地区实际控制线50公里内、和直辖部落地区、俾路支省和开伯尔-普赫图赫瓦省、交战地区；<br/>
+					巴拉圭的除亚松森以外地区；<br/>
+					巴勒斯坦；<br/>
+					巴拿马的达连省；<br/>
+					白俄罗斯(旅行超过60天以上)；<br/>
+					波斯尼亚/黑塞哥维那；<br/>
+					布基纳法索；<br/>
+					布隆迪；<br/>
+					<br/>
+					C:<br/>
+					车臣共和国；<br/>
+					<br/>
+					D:<br/>
+					东帝汶；<br/>
+					多哥；<br/>
+					<br/>
+					E:<br/>
+					俄罗斯的车臣、印古什、达吉斯坦和北奥塞梯；<br/>
+					厄瓜多尔；<br/>
+					厄立特里亚；<br/>
+					<br/>
+					F:<br/>
+					菲律宾的霍洛岛、交战地区；<br/>
+					<br/>
+					G：<br/>
+					冈比亚；<br/>
+					刚果共和国的刚果布；<br/>
+					刚果民主共和国的刚果金；<br/>
+					哥伦比亚；<br/>
+					格鲁吉亚共和国；<br/>
+					<br/>
+					H：<br/>
+					哈萨克斯坦 (旅行超过60天以上)；<br/>
+					海地；<br/>
+					洪都拉斯；<br/>
+					<br/>
+					J:<br/>
+					吉布提；<br/>
+					吉尔吉斯坦德巴特肯省、贾拉拉巴德省和奥什省；<br/>
+					几内亚；<br/>
+					几内亚比绍；<br/>
+					加纳；<br/>
+					加蓬；<br/>
+					柬埔寨的与泰国的边境线；<br/>
+					津巴布韦；<br/>
+					<br/>
+					K:<br/>
+					喀麦隆；<br/>
+					卡萨芒斯；<br/>
+					科摩罗岛；<br/>
+					科特迪瓦共和国；<br/>
+					科威特(旅行超过60天以上)；<br/>
+					肯尼亚；<br/>
+					<br/>
+					L:<br/>
+					莱索托；<br/>
+					老挝的北部辖川圹省，saisomboun特别经济区；<br/>
+					黎巴嫩；<br/>
+					利比里亚；<br/>
+					利比亚；<br/>
+					卢旺达；<br/>
+					<br/>
+					M:<br/>
+					马达加斯加；<br/>
+					马拉维；<br/>
+					马来西亚的沙巴省内，山打根东部至斗湖北部海岸以南岛屿；<br/>
+					马里；<br/>
+					马其顿王国（旅行超过60天以上）；<br/>
+					毛里塔尼亚的摩洛哥、阿尔及利亚和马里边境地区；<br/>
+					孟加拉国的吉大港山区 ；<br/>
+					秘鲁的库斯科、阿亚库乔地区、埃内河谷、阿普里马克省、瓦亚加河和哥伦比亚边境；<br/>
+					缅甸；<br/>
+					莫桑比克；<br/>
+					墨西哥的美国边境地区的下加利福尼亚州、索诺拉州、奇瓦瓦州、科阿韦拉州、新莱昂州和塔毛利帕斯州、农村地区的杜兰戈、萨卡特卡斯及偏远农村的格雷罗州；<br/>
+					<br/>
+					N:<br/>
+					尼泊尔；<br/>
+					尼加拉瓜；<br/>
+					尼日尔；<br/>
+					尼日利亚；<br/>
+					<br/>
+					Q:<br/>
+					乔治亚；<br/>
+					<br/>
+					S:<br/>
+					塞尔维亚的科索沃：“科索沃北部”和米特罗维察镇；<br/>
+					塞拉利昂；<br/>
+					塞内加尔；<br/>
+					沙特阿拉伯的也门边境 ；<br/>
+					圣萨尔瓦多；<br/>
+					斯里兰卡的北省地区；<br/>
+					苏丹（南、北苏丹）；<br/>
+					所罗门群岛；<br/>
+					索马里；<br/>
+					<br/>
+					T:<br/>
+					塔吉克斯坦德阿富汗边境30公里地区；<br/>
+					泰国的缅甸和柬埔寨边界、南端省份北大年、也拉、宋卡；<br/>
+					坦桑尼亚；<br/>
+					突尼斯的和阿尔及利亚接壤地区；<br/>
+					土耳其的伊拉克边境省区、(凡, 哈卡利和西马克) 和东南部通杰利省、宾格尔省、迪亚尔巴克雅；<br/>
+					土库曼斯坦；<br/>
+					<br/>
+					W:<br/>
+					危地马拉；<br/>
+					委内瑞拉的偏远地区（距哥伦比亚边境50公里以内地区 ）；<br/>
+					乌干达；<br/>
+					乌克兰(旅行超过60天以上)；<br/>
+					乌兹别克斯坦的最东部、福尔加纳山谷、纳曼干-安集延地区；<br/>
+					<br/>
+					X:<br/>
+					西撒哈拉；<br/>
+					象牙海岸；<br/>
+					叙利亚；<br/>
+					<br/>
+					Y:<br/>
+					亚美尼亚；<br/>
+					也门；<br/>
+					伊拉克共和国；<br/>
+					伊朗；<br/>
+					以色列的西岸、加沙、耶路撒冷等；<br/>
+					印度的查谟和克什米尔、阿萨姆邦、曼妮普尔区、那加兰邦和特里普拉邦、在拉达克与巴基斯坦边境50公里地区；<br/>
+					印度尼西亚的苏拉威西岛中心地区、安汶、亚齐省和巴布亚岛；<br/>
+					约旦（距叙利亚边境相邻的5公里范围地区）；<br/>
+					<br/>
+					Z:<br/>
+					赞比亚；<br/>
+					乍得共和国；<br/>
+					中非共和国；<br/>
+				</p>
+			</div>
+		</div>
+	</section>	
+	
+	<section id="guarantorInfo">
+		<div class="m-hd">
+			<p>投保人暨被保人信息</p>
+		</div>
+		<div class="pub-w" style="margin-top:15px;">
+			<div class="login-form">
+				<input type="text" name="user" id="username" placeholder="姓名">
+				<!-- <div id="identityType" style="margin-bottom:20px"></div> -->
+				<div class="pos-form">
+					<input type="text" id="change-z" placeholder="证件类型" readonly="readonly">
+					<span class="select-js"><i></i> 
+						<select id="selId" onchange="changeSr(this.value)">
+							<option value="0">选择</option>
+							<option value="1">身份证</option>
+							<option value="3">护照</option>
+							<option value="4">台胞证</option>
+							<option value="5">港澳通行证</option>
+							<option value="2">军人证</option>
+							<option value="7">其他</option>
+						</select>
+					</span>
+				</div>
+				<div class="pos-form">
+					<input type="text" name="identification" id="identification" placeholder="证件号码" onblur="checkId(this.value)">
+				</div>
+				<div class="pos-form" id="birthdaySelect" style="display:none">
+					<input type="text" id="txtbirthday" placeholder="生日" readonly="readonly">
+					<span class="select-js"><i></i>
+						<input id="dateBirthday" type="date" onchange="changeBirthday(this.value)" />
+					</span>
+				</div>
+				<div class="pos-form" id="gendar" style="display:none">
+					<input type="text" id="txtGendar" placeholder="性别" readonly="readonly">
+					<span class="select-js"><i></i>
+						<select  id="selGendar" onchange="changeSex(this.value)">
+							<option value="0">选择</option>
+							<option value="1">男</option>
+							<option value="2">女</option>
+						</select>
+					</span>
+				</div>
+<!-- 				<div id="gender" style="display:none;margin-bottom:20px"></div> -->
+
+				<div class="pos-form">
+					<input type="tel" placeholder="请输入手机号" id="mobile">
+				</div>
+				<div class="pos-form yzm-ipt">
+					<input type="tel"  id="code"  name="code" placeholder="验证码">
+					<p><button id="verificationCodeButton" class="J-dm">获取验证码</button></p>
+				</div>				
+				<input type="email" placeholder="请输入有效邮箱以便收取电子保单" id="email" name="email">
+				<div class="pos-form">
+					<input type="tel" placeholder="推荐人电话" id="referee" name="referee">		
+				</div>						
+				<button id="showOrderConfirmButton">下一步</button>
+			</div>
+		</div>
+	</section>
+	<section id="orderConfirm">
+		<div class="m-hd">
+			<p>订单确认</p>
+		</div>
+		<div class="m-plst p-order-detail">
+			<ul>
+				<li>
+					<br/>
+					<h1>订单信息</h1>
+					<p>
+						<span>产品名称：</span>
+						<span id="orderConfirmProductName">境外旅行险</span>
+						<input type="hidden" id="pageCode" value="travelOffshoreDetail">
+						<input type="hidden" id="orderConfirmProductCode" value="ECF">
+					</p>
+					<p>
+						<span>生效时段：</span>
+						<span id="orderConfirmEfficentTime"></span>
+					</p>
+					<p>
+						<span>保险责任：</span>
+						<span>意外身故或伤残（10万）</span>
+					</p>
+					<p style="margin-left:97px">
+						意外医疗（1万）
+					</p>
+					<p>
+						<span>保险期限：</span>
+						<span id="orderConfirmEfficentRange"></span>
+					</p>
+					<p>
+						<span>保费合计：</span>
+						<span id="orderConfirmTotal"></span>
+					</p>
+					<p>
+						<span>受益人：</span>
+						<span>法定</span>
+					</p>
+					<br/>
+				</li>
+				<li>
+					<br/>
+					<h1>投保人暨被保人信息</h1>
+					<p>
+						<span>姓 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+						<span id="orderConfirmUsername"></span>
+					</p>
+					<p>
+						<span>证件类型：</span>
+						<span id="orderConfirmIdType"></span>
+					</p>					
+					<p>	
+						<span>证件号码：</span>
+						<span id="orderConfirmIdentification"></span>
+					</p>
+					<p>
+						<span>手机号码：</span>
+						<span id="orderConfirmMobile"></span>
+					</p>
+					<br/>
+				</li>
+			</ul>
+		</div>
+		<button id="payButton" class="b-btn ma_4 mt_new_65">立即支付</button>
+	</section>
+	
+	<!-- Transparent -->
+	<div class="m-trans J-trans"></div>
+	<!-- End Transparent -->	
+	
+	<!--nav-->
+	<div id="navDiv">	
+	</div>
+	<!--End nav-->
+</body>
+</html>

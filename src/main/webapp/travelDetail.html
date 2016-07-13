@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>产品详情</title>
+	<link rel="stylesheet" href="css/main.css?v=5" type="text/css">
+	<script src="js/zepto.min.js"></script>
+	<script src="js/main.js?v=9"></script>
+	<script src="js/travelDetail.js?v=12"></script>
+</head>
+<body>
+	
+	<!-- header --><!-- 
+	<header>
+		<div class="head-nav">
+			产品详情
+			<div class="head-back"> <p class="arw"><span></span></p> <p class="fl">返回</p></div>
+			<div class="head-menu"> <span></span> <span></span> <span></span></div>
+		</div>
+	</header>-->
+	<!-- End header -->
+
+
+	<!-- main -->
+	<section id="travelDetail">
+		<div class="user-hm"><p><a href="/loginOnlineStore?act=myinsurance"></a></p></div>
+
+		<!-- banner -->
+		<div class="banner">
+			<a href="#"><img src="img/banner3.jpg" alt=""></a>
+		</div>
+		<!-- End banner -->
+
+		<!-- detail -->
+		<div class="pub-w">
+			<div class="login-form">
+
+				<div class="travel-detail">
+					<ul>
+						<li class="fixed">
+							<p>意外身故、伤残10万</p>
+							<p>意外医疗1万</p>
+							<div><i></i></div><input type="hidden" id="moneySelect" value="10">
+						</li>
+						<li class="fixed">
+							<span>2015-01-01</span>
+							<p>生效日期</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span>2015-01-01</span>
+							<p>失效日期</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span> <em>7.0</em> 元</span>
+							<p>支付金额</p>
+						</li>
+					</ul>
+				</div>
+
+				<label><span class="check" id="agreecheck"></span> <span>同意 <a href="#">《服务协议》</a></span></label>
+				<button id="showGuarantorInfoButton">立即投报</button>
+			</div>
+		</div>
+		<!-- End detail -->
+
+	</section>
+	<!-- End main -->
+
+	<section id="guarantorInfo">
+		<div class="security">
+			<h1>投保人暨被保人信息</h1>
+		</div>
+		<div class="pub-w" style="margin-top:15px;">
+			<div class="login-form">
+				<input type="text" name="user" placeholder="姓名">
+				<div class="pos-form">
+					<input type="text" value="身份证" disabled id="change-z">
+					<span class="select-js"><i></i></span>
+					<!-- divshow -->
+					<div class="show-div">
+						<ul>
+							<li>身份证1</li>
+							<li>身份证2</li>
+						</ul>
+					</div>
+				</div>
+				<input type="text" name="user" placeholder="证件号码">
+				<div class="pos-form phone-ipt">
+					<input type="text" placeholder="请输入手机号">
+					<p>+86</p>
+				</div>
+				<div style="display:none" class="pos-form yzm-ipt">
+					<input type="text" placeholder="验证码" id="verificationCode">
+					<p>短信验证码</p>
+				</div>
+				<p style="display:none" class="t-lf">请输入有效邮箱以便收取电子保单</p>
+				<button id="showOrderConfirmButton">下一步</button>
+			</div>
+		</div>
+	</section>
+	<section id="orderConfirm">
+		<div class="security">
+			<h1>订单确认</h1>
+		</div>
+		<div class="pub-w">
+			<div class="login-form">
+				<div class="order-confirm">
+					<h1>订单详情</h1>
+					<ul class="fixed">
+						<li class="fixed">
+							<p class="t-name">产品名称：</p>
+							<p>旅行宝境内旅行保障计划</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">生效时段：</p>
+							<p>2015-01-01 至 2015-02-01（北京时间）</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">保险责任：</p>
+							<p>意外身故或伤残（10万）<br>意外医疗（1万）</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">保险期限：</p>
+							<p>30天</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">保费合计：</p>
+							<p>10元</p>
+						</li>
+					</ul>
+				</div>
+				<div class="order-confirm">
+					<h1>投保人暨被保人信息</h1>
+					<ul class="fixed">
+						<li class="fixed">
+							<p class="t-name">姓名：</p>
+							<p>某某</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">证  件  号：</p>
+							<p>3101091********99</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">受  益  人：</p>
+							<p>法定继承人</p>
+						</li>
+					</ul>
+				</div>
+				<button>微信支付</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

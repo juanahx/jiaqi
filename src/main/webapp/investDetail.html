@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>产品详情</title>
+	<link rel="stylesheet" href="css/main.css?v=5" type="text/css"><link href="css/selectivity-full.css" rel="stylesheet">
+	<script src="js/zepto.full.js"></script><script src="js/selectivity-full.min.js"></script>
+	<link rel="stylesheet" href="/css/zepto.alert.css?v=1" type="text/css">
+	<script src="js/zepto.alert.js"></script>
+    <script src="js/mobiscroll.zepto.js" type="text/javascript"></script>
+	<script src="js/travelDetail.js?v=12"></script>
+	<script src="js/main.js?v=9"></script>
+	
+	
+
+    <script src="js/mobiscroll.core.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.scroller.js" type="text/javascript"></script>
+
+    <script src="js/mobiscroll.datetime.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.select.js" type="text/javascript"></script>
+
+    <script src="js/mobiscroll.scroller.android.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.scroller.android-ics.js" type="text/javascript"></script>
+    <link href="css/mobiscroll.scroller.android-ics.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/mobiscroll.i18n.zh.js" type="text/javascript"></script>
+
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.sense-ui.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="text/javascript">
+        $(function () {        
+        	//optionObj = new Option(text, value, false, true); //默认选中
+        	
+        	for (var i = 10; i <= 199; i++) {
+        		document.getElementById("moneySelect").options.add(new Option(i+'份', i+'份'));
+			}
+
+            var now = new Date(); 
+            var beginDate = new Date(now.valueOf() + 1*24*60*60*1000);
+            $('#beginDate').val(beginDate.format('yyyy-MM-dd'));
+            $('#moneySelect').scroller('destroy').scroller({onSelect: changeInsurance, preset: 'select' });
+        });
+        
+        function changeInsurance(value,inst) {
+        	$('#moneyEm').text(value.substr(0, value.length - 1) * 10000);        	
+        }
+    </script>
+    <style type="text/css">
+        select, input
+        {
+            border-width: 0px;
+            width:100%;
+
+        }
+
+    </style>
+</head>
+<body>
+	
+	<!-- header --><!-- 
+	<header>
+		<div class="head-nav">
+			产品详情
+			<div class="head-back"> <p class="arw"><span></span></p> <p class="fl">返回</p></div>
+			<div class="head-menu"> <span></span> <span></span> <span></span></div>
+		</div>
+	</header>-->
+	<!-- End header -->
+
+
+	<!-- main -->
+	<section id="travelDetail">
+		<div class="user-hm"><p><a href="/loginOnlineStore?act=myinsurance"></a></p></div>
+
+		<!-- banner -->
+		<div class="banner">
+			<a href="#"><img src="img/banner3.jpg" alt=""></a>
+		</div>
+		<!-- End banner -->
+
+		<!-- detail -->
+		<div class="pub-w">
+			<div class="login-form">
+
+				<div class="travel-detail">
+					<ul>
+						<li class="fixed" id="showAssuranceInfoButton">
+							<p>预期年化收益3.8%</p>
+							<p>身故领回105%+满期保险金</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span><input id="beginDate" class="dateselect" readonly size="9"></span>
+							<p>生效日期</p>
+							<div></div>
+						</li>
+						<li class="fixed">
+							<span id="dateRange">至75周岁</span>
+							<p>保障期间 </p>
+							<div></div>
+						</li>
+						<li class="fixed">
+							<select id="moneySelect" class="demo-test-select" data-role="none" onchange="changeInsurance(this.value)">
+
+				            </select>
+							<p>购买份数 </p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span> <em id="moneyEm">10000.0</em> 元</span>
+							<p>支付金额</p>
+						</li>
+					</ul>
+				</div>
+
+				<label><span class="check" id="agreecheck"></span> <span>同意 <a href="#">《服务协议》</a></span></label>
+				<button id="showGuarantorInfoButton">立即投保</button>
+			</div>
+		</div>
+		<!-- End detail -->
+
+	</section>
+	<!-- End main -->
+	<section id="assuranceInfo">
+<!-- 		<div class="head-nav">
+			产品详情
+			<div class="head-back"> <p class="arw"><span></span></p> <p class="fl" id="showDetailButton">返回</p></div>
+			<div class="head-menu"> <span></span> <span></span> <span></span></div>
+		</div>-->
+		<div class="pub-w">
+			<div class="assurance">
+				<h1>产品特色：</h1>
+				<p>稳收益：预期年化收益3.8%<br>
+				多保障：身故领回105%+满期保险金<br>
+				活理财：投保满一年退出0手续费<br>
+				零成本：0初始费0管理费0风险保费<br>
+				零风险：前五年保底年化收益2.5%<br>
+				<h1>提供保障：</h1>
+				<p>身故领回105%+满期保险金<br>
+				<h1>重要告知：</h1>
+				<p>1、本产品承保年龄为18-65周岁，保险期限至75周岁<br>
+				2、本产品投保成功后次日零时生效<br>
+				3、本产品退保费用一年内5%，第二年开始零手续费。第六年及以后，我们可调整最低保证利率，但不低于2%<br>
+				4、本产品10000元起购，每份1000元，每位客户最高可购买199000元<br>
+			</div>
+		</div>
+	</section>
+	<section id="guarantorInfo">
+		<div class="security">
+			<h1>投保人暨被保人信息</h1>
+		</div>
+		<div class="pub-w" style="margin-top:15px;">
+			<div class="login-form">
+
+				<input type="text" name="user" id="username" placeholder="姓名">
+				<div id="identityType" style="margin-bottom:20px"></div>
+				<input type="text" name="identification" id="identification" placeholder="证件号码"><div><input style="display:none" id="birthdaySelect"  name="birthdaySelect" placeholder="生日" readonly></div>
+				<div id="gender" style="display:none;margin-bottom:20px"></div>
+				<div class=t-lf>
+					<input type="text" placeholder="请输入有效邮箱以便收取电子保单" id="email" name="email">				
+				</div>
+				<div class="pos-form phone-ipt">
+					<input type="text" placeholder="请输入手机号" id="mobile">
+					<p>+86</p>
+				</div>
+				<div style="display:none" class="pos-form yzm-ipt">
+					<input type="text" placeholder="验证码" id="verificationCode">
+					<p>短信验证码</p>
+				</div>
+				<p style="display:none" class="t-lf">请输入有效邮箱以便收取电子保单</p>
+				<button id="showOrderConfirmButton">下一步</button>
+			</div>
+		</div>
+	</section>
+	<section id="orderConfirm">
+		<div class="security">
+			<h1>订单确认</h1>
+		</div>
+		<div class="pub-w">
+			<div class="login-form">
+				<div class="order-confirm">
+					<h1>订单详情</h1>
+					<ul class="fixed">
+						<li class="fixed">
+							<p class="t-name">产品名称：</p>
+							<p id="orderConfirmProductName">金稳盈两全保险（万能型）</p>
+							<input type="hidden" id="orderConfirmProductCode" value="AFF">
+						</li>
+						<li class="fixed">
+							<p class="t-name">生效时段：</p>
+							<p id="orderConfirmEfficentTime"></p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">保险责任：</p>
+							<p>意外身故或伤残（10万）<br>意外医疗（1万）</p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">保险期限：</p>
+							<p id="orderConfirmEfficentRange"></p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">保费合计：</p>
+							<p id="orderConfirmTotal"></p>
+						</li>
+					</ul>
+				</div>
+				<div class="order-confirm">
+					<h1>投保人暨被保人信息</h1>
+					<ul class="fixed">
+						<li class="fixed">
+							<p class="t-name">姓名：</p>
+							<p id="orderConfirmUsername"></p>
+						</li>
+						<li class="fixed">
+							<p class="t-name">证  件  号：</p>
+							<p id="orderConfirmIdentification"></p>
+						</li>
+						<!-- 
+						<li class="fixed">
+							<p class="t-name">受  益  人：</p>
+							<p>法定继承人</p>
+						</li> -->
+					</ul>
+				</div>
+				<button id="payButton">立即支付</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>投保人暨被保人信息</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body class="body-gray">
+	
+	<header>
+		<div class="security">
+			<h1>投保人暨被保人信息</h1>
+		</div>
+	</header>
+
+	<!-- main -->
+	<section>
+	
+		<div class="pub-w" style="margin-top:15px;">
+			<div class="login-form">
+				<input type="text" name="user" placeholder="姓名">
+				<div class="pos-form">
+					<input type="text" value="身份证" disabled id="change-z">
+					<span class="select-js"><i></i></span>
+					<!-- divshow -->
+					<div class="show-div">
+						<ul>
+							<li>身份证1</li>
+							<li>身份证2</li>
+						</ul>
+					</div>
+				</div>
+				<input type="text" name="user" placeholder="证件号">
+				<div class="pos-form phone-ipt">
+					<input type="text" placeholder="请输入手机号">
+					<p>+86</p>
+				</div>
+				<input type="text" name="user" placeholder="请输入有效邮箱以便收取电子保单">
+				<button>下一步</button>
+			</div>
+		</div>
+	</section>
+	<!-- End main -->
+
+
+	<script src="js/zepto.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

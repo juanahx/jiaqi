@@ -1,0 +1,16 @@
+guotaiapihost=http://wechat.cathaylife.cn
+guotaiapiurlmemberregister=rest/testresource/register
+guotaiapiurllogin=rest/testresource/login
+guotaiapiurlbind=rest/testresource/bindWechat
+guotaiapiurllist=rest/testresource/getPolicies
+guotaiapiurlcheck=rest/testresource/buy
+guotaiapiurlpay=rest/testresource/pay
+guotaiapiurlsendsms=rest/testresource/sendSMS
+guotaiapiurlgetcustomerinfo=rest/testresource/getCustInfo
+
+
+guotaipayurlnotify=http://wechat.cathaylife.cn/rest/onlinestoreresource/payNotify
+appid=wx0e9b4be4fefb8b43
+mch_id=10080586
+appsecret=402a89914401cae46eea95e0c45029bb
+paykey=WILag9qbrt0axWC5Rfa80XtmguZEodAI

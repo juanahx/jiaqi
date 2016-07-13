@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>会员注册登录</title>
+	<link rel="stylesheet" href="/css/main.css" type="text/css">
+	<link href="css/selectivity-full.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/main.css?v=5" type="text/css"><link href="/css/selectivity-full.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/zepto.alert.css?v=1" type="text/css">
+	<script src="/js/zepto.full.js"></script><script src="/js/selectivity-full.min.js"></script>
+	<script src="/js/zepto.alert.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="/js/main.js?v=9"></script>	
+	<script src="/js/login.js?v=4"></script>	
+</head>
+<body class="body-gray">
+
+	<!-- main -->
+	<section>
+		<div class="login">
+			<div class="login-tab tab">
+				<ul>
+					<li>会员登录</li>
+					<li>会员注册</li>
+				</ul>
+			</div>
+			<div class="mar-20 pub-w">
+				<div class="tab-cont">
+					
+					<!-- login -->
+					<div class="tab-container" style="display:block;">
+						<div class="login-form">
+							<input type="text" name="user" id="user" placeholder="手机号/身份证/用户名">
+							<input type="password" name="passwordforlogin" id="passwordforlogin" placeholder="密码">
+							<button id="loginButton">立即登录</button>
+						</div>
+					</div>
+
+					<!-- register -->
+					<div class="tab-container">
+						<div class="login-form">
+							<div class="pos-form phone-ipt">
+								<input id="mobile" type="number" placeholder="请输入手机号">
+								<p>+86</p>
+							</div>
+							<div class="pos-form yzm-ipt">
+								<input type="number" id="verificationCode" placeholder="验证码">
+								<p><button id="verificationCodeButton" class="J-dm">获取验证码</button></p>
+							</div>
+							<input type="password" id="passwordforregister" name="passwordforregister" placeholder="密码">
+							<input type="password" id="passwordconfirmforregister" name="passwordconfirmforregister" placeholder="确认密码">
+							<label><span  id="agreecheck" class="check"></span> <span>同意 <a href="/serviceAgreement.html">《服务协议》</a></span></label>
+							<button id="registerButton">立即注册</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End main -->
+
+
+	<!-- tip -->
+	<div class="tip">
+		<p><a href="/login.html">绑定账号</a>，立享保单查询、在线理赔等更多贴心服务</p>
+	</div>
+	<!-- End tip -->
+	
+	
+	<script src="js/zepto.min.js"></script>
+	<script src="js/main.js?v=9"></script>
+
+</body>
+</html>

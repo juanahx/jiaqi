@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>掌中保</title>
+	<link rel="stylesheet" href="css/main.css?v=5" type="text/css">
+	<link href="css/selectivity-full.css" rel="stylesheet">
+	<script src="js/zepto.min.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/selectivity-full.min.js"></script>
+	<script src="js/json2template.js"></script>
+	<script src="js/main.js?v=9"></script>
+	<script src="js/list.js"></script>
+</head>
+<body class="g-bg J-bd body-gray">
+	<div id="template-list" style="display: none">
+		<!-- header -->
+		<header>
+			<div class="m-hd">
+				<p>{{categoryName}}</p>
+				<div class="m-io J-mu">
+					<i></i>
+					<i></i>
+					<i></i>
+				</div>
+				<a href="/loginOnlineStore?act=myinsurance" class="m-us"></a>
+			</div>
+		</header>
+		
+		<!-- End header -->
+	
+		<!-- main -->
+		<section>
+			<div class="m-plst">
+				<ul>
+					<li class="{{item}}">
+						<a href="{{href}}">
+							<p><img src="{{img}}" /><i></i></p>
+							<p class="m-tx1">
+								<span><em>{{price}}</em> {{unit}}</span>
+								<span>{{name}}</span>
+							</p>
+							<p class="m-tx2">{{description}}</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- End main -->
+	</div>
+	<div id="list"></div>
+		
+	<!-- Transparent -->
+	<div class="m-trans J-trans"></div>
+	<!-- End Transparent -->
+	
+	<!--nav-->
+	<div id="navDiv">	
+	</div>
+	<!--End nav-->
+</body>
+</html>

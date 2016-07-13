@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<meta http-equiv="pragma" content="no-cach" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<title>掌中保</title>
+	<link rel="stylesheet" href="css/main.css?v=5" type="text/css"><link href="css/selectivity-full.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/zepto.alert.css?v=1" type="text/css">
+	<script src="js/zepto.full.js"></script><script src="js/selectivity-full.min.js"></script>
+	<script src="js/zepto.alert.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/main.js?v=9"></script>	
+	<script src="js/identifyBinding.js?v=1"></script>
+	
+</head>
+
+<body class="body-gray">
+	
+	<!-- header -->
+	<header>
+		<div class="m-hd">
+			<p>帐号绑定</p>
+		</div>		
+	</header>
+	<!-- End header -->
+
+	<!-- main -->
+	<section>
+		<div class="pub-w" style="margin-top:15px;" id="userbinddiv">
+			<div class="login-form">				
+				<div class="pos-form">
+					<input type="text" id="username" name="username" placeholder="姓名">
+				</div>
+				<div class="pos-form">
+					<input type="text" placeholder="证件类型" id="change-z" readonly="readonly">
+					<span class="select-js"><i></i> 
+						<select id="selId" onchange="changeSr(this.value)">
+							<option value="0">选择</option>
+							<option value="1">身份证</option>
+							<option value="3">护照</option>
+							<option value="4">台胞证</option>
+							<option value="5">港澳通行证</option>
+							<option value="2">军人证</option>
+							<option value="7">其他</option>
+						</select>
+					</span>				
+				</div>
+				<div class="pos-form">
+					<input type="text" id="idNO" name="idNO" placeholder="证件号码">								
+				</div>
+				<div class="pos-form">
+					<input type="tel" id="mobile"  name="mobile" placeholder="请输入手机号">
+				</div>
+				<div class="pos-form yzm-ipt">
+					<input type="tel"  id="code"  name="code" placeholder="验证码">
+					<p><button id="verificationCodeButton" class="J-dm">获取验证码</button></p>
+				</div>
+				<input type="hidden"  name="openId" id="openId">
+				<button id="bindButton">立即绑定</button>
+			</div>
+		</div>
+	</section>
+	<!-- End main -->
+
+
+</body>
+<script type="text/javascript">
+	
+	function changeSr(vl){
+    	$("#change-z").val(selectIdentify(vl));	
+	}
+</script>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1" name="viewport" />
+	<title>掌中保</title>
+	<link rel="stylesheet" href="css/main.css?v=5" type="text/css">
+	<link href="css/selectivity-full.css" rel="stylesheet">
+	<script src="js/zepto.min.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/selectivity-full.min.js"></script>
+	<link rel="stylesheet" href="/css/zepto.alert.css?v=1" type="text/css">
+	<script src="js/zepto.alert.js"></script>
+	<script src="js/main.js?v=9"></script>
+	<script src="js/mobiscroll.zepto.js" type="text/javascript"></script>
+	<script src="js/travelDetail.js?v=12"></script>
+
+    <script src="js/mobiscroll.core.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.scroller.js" type="text/javascript"></script>
+
+    <script src="js/mobiscroll.datetime.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.select.js" type="text/javascript"></script>
+
+    <script src="js/mobiscroll.scroller.android.js" type="text/javascript"></script>
+    <script src="js/mobiscroll.scroller.android-ics.js" type="text/javascript"></script>
+    <link href="css/mobiscroll.scroller.android-ics.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/mobiscroll.i18n.zh.js" type="text/javascript"></script>
+
+    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.sense-ui.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="text/javascript">
+        $(function () {        	
+            //var now = new Date(); 
+            //var beginDate = new Date(now.valueOf() + 1*24*60*60*1000);
+            //$('#beginDate').val(beginDate.format('yyyy-MM-dd'));
+            //var beginDateMax = new Date(now.valueOf() + 180*24*60*60*1000);
+            //var beginDateOpt = {
+            //        'date': {
+            //            preset: 'date',
+            //            minDate: beginDate,
+            //            maxDate: beginDateMax,
+            //            onSelect: function(valueText,inst){						
+            //            }
+            //        },
+            //};
+            //creatdate($('#beginDate'), beginDateOpt);
+            //$('#moneySelect').scroller('destroy').scroller({onSelect: changeInsurance, preset: 'select' });
+        	setbeignDate();
+        });
+        
+        function chanegDate(vl){
+        	var now = new Date();
+        	// 和当前时间做比较
+        	var time = dateAddExec(now, 1);
+        	var dateDiff = DateDiff(vl, time.format("yyyy-MM-dd"));
+        	if ( dateDiff >= 0 && dateDiff <= 365 ){
+        		$(".J-beginDate").text(vl);
+        	} else {
+        		showMessageDialog('开始时间在明天开始1年内')
+        	}
+        }
+        
+        function changeInsurance(value) {
+        	$(".J-wy").text(value + "万元");
+        	var price = 0;
+        	if (value == 30) {
+        		price = 5 * 90 / 100;	
+        	} 
+//         	else if (value == 60) {
+//         		$('#moneyEm').text('10.0');	
+//         	} 
+        	else if (value == 90) {
+        		price = 15 * 90 / 100;
+        	} 
+//         	else if (value == 120) {
+//         		$('#moneyEm').text('20.0');	
+//         	} 
+        	else if (value == 150) {
+        		price = 25 * 90 / 100;
+        	}
+        	price = formatCurrencyTenThou(price);
+        	$('#moneyEm').text(price);
+        }
+        
+        function changeSr(vl){
+        	$("#change-z").val(selectIdentify(vl));
+        	if (vl != "1" && vl != "0"){
+       			$('#birthdaySelect').css('display','block'); 
+       			$('#gendar').css('display','block');
+//        			var now = new Date();
+//        			now.setFullYear(1980);
+//        			now.setMonth(0);
+//        			now.setDate(1);
+       			$("#txtbirthday").val("");
+//        		    $("#dateBirthday").val(now.format('yyyy-MM-dd'));
+       		    
+       		 	$("#txtGendar").val("");
+//        		 	$("#selGendar").find("option[value='1']").attr("selected",true);
+    		    //$("#selGendar").select(1);
+        	} else {
+    			$('#birthdaySelect').css('display','none'); 
+    			$('#gendar').css('display','none'); 
+    		}
+        }
+        function changeBirthday(val){
+        	//if ( checkMyBirthday(val) ){
+        		$("#txtbirthday").val(val);
+        	//}
+        }
+        function changeSex(sex){
+        	if ( sex == "1"){
+        		$("#txtGendar").val("男");
+        	} else if ( sex == "2"){
+        		$("#txtGendar").val("女");
+        	} else {
+        		$("#txtGendar").val("");
+        	}
+        }        
+    </script>
+    <style type="text/css">
+        select, input
+        {
+            border-width: 0px;
+            width:100%;
+
+        }
+
+    </style>
+</head>
+<body class="g-bg J-bd body-gray">
+	
+	
+	<!-- header -->
+	<header id="header">
+		<div class="m-hd">
+			<p>短期航空意外险</p>
+			<div class="m-io J-mu">
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+			<a href="/loginOnlineStore?act=myinsurance" class="m-us"></a>
+		</div>
+	</header>
+	<!-- End header -->
+
+
+	<!-- main -->
+	<section id="travelDetail">
+		<div class="J-heis">
+		<div class="m-tdl fixed">
+			<div class="m-lvv J-vv">
+				<ul>
+					<li>
+						<p><img src="img/air_acc.png" alt="" /></p>
+						<i></i>
+						<span>不限次数，纵享飞行之美</span>
+					</li>
+				</ul>
+			</div>		
+
+			<div class="login-form">
+
+				<div class="travel-detail">
+					<ul>
+						<li class="fixed" id="showAssuranceInfoButton">
+							<p>航空意外身故：最高赔付150万元</p>
+							<p>航空意外伤残：最高赔付150万元</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span><i class="J-beginDate">2015-12-17</i><input id="meeting" type="date" value="2015-12-17" class="m-op-o" onchange="chanegDate(this.value)"/></span>
+							<p>生效日期</p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span id="dateRange">30天</span>
+							<p>保障期间 </p>
+							<div></div>
+						</li>
+						<li class="fixed">
+							<span>
+								<i class="J-wy">30万元</i>
+								<select id="moneySelect" class="demo-test-select m-op-o" data-role="none" onchange="changeInsurance(this.value)">
+					                <option value="30">30万元</option>
+<!-- 					                <option value="60">60万元</option> -->
+					                <option value="90">90万元</option>
+<!-- 					                <option value="120">120万元</option> -->
+					                <option value="150">150万元</option>
+					            </select>
+				            </span>
+							<p>保障额度 </p>
+							<div><i></i></div>
+						</li>
+						<li class="fixed">
+							<span> <em id="moneyEm">4.5</em> 元</span>
+							<p>支付金额</p>
+						</li>
+						<li class="fixed">
+							<span class="check" style="float:left" id="agreecheck"></span>
+							<span style="float:left;margin-left:-14px;">同意<a href="policy/（海陆空&全年自驾车意外险&全年公交出行险&短期航空意外险&全年航空意外险）产品条款.html">《保险条款》</a></span>
+							<span style="float:left;margin-left:-20px;">及<a href="#assurance">《投保须知》</a></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="h-64"></div>
+		<div class="m-fx">
+			<button id="showGuarantorInfoButton"  class="b-btn ma_4">立即投保</button>
+		</div>
+	</section>
+	<!-- End main -->
+	<section id="assuranceInfo">
+	<!-- 	<div class="head-nav">
+			产品详情
+			<div class="head-back"> <p class="arw"><span></span></p> <p class="fl" id="showDetailButton">返回</p></div>
+			<div class="head-menu"> <span></span> <span></span> <span></span></div>
+		</div>-->
+		<div>
+			<div class="assurance p-detail">
+				<br/>
+				<h1>产品特色：</h1>
+				<p>18到70周岁经常坐飞机的“空中一族”都可投保，30天内国际国内航班都保障，不限飞行次数。<br></p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>提供保障：</h1>
+				<p>乘坐航班时因航班事故导致身故或伤残<br>
+				乘坐航班时因航班事故导致意外伤残：根据伤残等级按比例赔付；<br>
+				保额可选：30万元/90万元/150万元<br>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>投保须知：</h1>
+				<p>1、投保人与被保险人需为同一人，年龄为18至70周岁 ；<br/>
+				2、投保成功后所选生效日期的当日零时生效，保险期间30天，国际国内航班不限次数；<br/>
+				3、本产品报送文件编号：陆家嘴国泰人寿总[2014]61号-53；条款二维码编号：陆家嘴国泰人寿[2014]意外伤害保险090号；<br>
+				4、购买前请详细阅读保险条款，尤其是责任免除条款、免赔额、免赔率、比例赔付或给付等免除或减轻我司责任的条款；<br/>
+				5、因网络投保的特殊性，受益人限定为被保险人的法定继承人（意为依法定继承顺序确定受益人），请您购买前慎重考虑；<br/>
+				6、本公司总部设于上海，在北京、浙江、江苏、广东、福建、山东、辽宁、天津设有省级分公司。非以上地区的客户，可能存在服务不到位、时效差等问题，敬请见谅；<br/>
+				7、保险费通过微信支付方式一次性缴纳。若您需要开具保险发票，请拨打客服热线400-886-9899申请，我们将通过挂号信免费寄送发票；若要求快递寄送，则运费由投保人承担；<br/>
+				8、本合同采用电子保单形式承保，电子保单会发送到您投保时所留的电子邮箱，您也可以通过登录我司官方网站www.cathaylife.cn查询保单；<br/>
+				9、投保、承保、保全、理赔、退保的办理流程如下：<br/>
+				（1）投保：投保人选择需要的保险计划，详细阅读保险条款、投保须知，并填写个人投保信息，核保通过后，投保人通过在线支付方式缴纳保费，保险合同成立；<br/>
+				（2）承保：实时接收客户投保信息，并由系统实时完成核保，核保通过且保费到账后保险合同成立；<br/>
+				（3）保全：投保人拨打客服热线400-886-9899申请保全，我们将尽快审核处理；<br/>
+				（4）理赔：出险后请尽快拨打客服热线400-886-9899报案，根据指示提交理赔资料，我们将审核案件，依照保险合同约定履行保险金给付义务。保险金将直接转账至被保险人/受益人名下的指定银行卡账户；<br/>
+				（5）退保：本产品为短期意外险，无犹豫期，具体退保事宜请详询我司各地服务中心；<br/>
+				10、我们将严格遵守现行的关于个人信息、数据及隐私保护的法律法规，采取充分的技术手段和制度管理，保护您提供给我们的个人信息、数据和隐私不受到非法的泄露或披露给未获授权的第三方。<br/>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>如实告知：</h1>
+				<p>
+				我们就您和被保险人的有关情况提出询问，您应当如实告知；如果您故意或者因重大过失未履行前款规定的如实告知义务，足以影响我们决定是否同意承保或者提高保险费率的，我们有权解除本合同，并不承担给付保险金的责任。<br/>
+				</p>
+				<br/>
+				<div class="m-hr"></div>
+				<br/>
+				<h1>声明：</h1>
+				<p style="color:red">
+				我已详尽阅读并理解、接受保险条款、投保须知等文件，尤其是有关保险责任及责任免除条款、免赔额、免赔率、比例赔付等免除或减轻贵公司责任的条款，以及承保地域限制、未如实告知后果等条款。
+				</p>
+			</div>
+		</div>
+	</section>
+	
+	<section id="guarantorInfo">
+		<div class="m-hd">
+			<p>投保人暨被保人信息</p>
+		</div>
+		<div class="pub-w" style="margin-top:15px;">
+			<div class="login-form">
+
+				<input type="text" name="user" id="username" placeholder="姓名">
+				<!-- <div id="identityType" style="margin-bottom:20px"></div> -->
+				<div class="pos-form">
+					<input type="text" placeholder="证件类型" id="change-z" readonly="readonly">
+					<span class="select-js"><i></i> 
+						<select id="selId" onchange="changeSr(this.value)">
+							<option value="0">选择</option>
+							<option value="1">身份证</option>
+							<option value="3">护照</option>
+							<option value="4">台胞证</option>
+							<option value="5">港澳通行证</option>
+							<option value="2">军人证</option>
+							<option value="7">其他</option>
+						</select>
+					</span>
+				</div>
+				<div class="pos-form">
+					<input type="text" name="identification" id="identification" placeholder="证件号码" onblur="checkId(this.value)">
+				</div>
+				<div class="pos-form" id="birthdaySelect" style="display:none">
+					<input type="text" id="txtbirthday" placeholder="生日" readonly="readonly">
+					<span class="select-js"><i></i>
+						<input id="dateBirthday" type="date" onchange="changeBirthday(this.value)" />
+					</span>
+				</div>
+				<div class="pos-form" id="gendar" style="display:none">
+					<input type="text" id="txtGendar" placeholder="性别" readonly="readonly">
+					<span class="select-js"><i></i>
+						<select  id="selGendar" onchange="changeSex(this.value)">
+							<option value="0">选择</option>
+							<option value="1">男</option>
+							<option value="2">女</option>
+						</select>
+					</span>
+				</div>
+<!-- 				<div id="gender" style="display:none;margin-bottom:20px"></div> -->
+
+				<div class="pos-form">
+					<input type="tel" placeholder="请输入手机号" id="mobile">
+				</div>
+				<div class="pos-form yzm-ipt">
+					<input type="tel"  id="code"  name="code" placeholder="验证码">
+					<p><button id="verificationCodeButton" class="J-dm">获取验证码</button></p>
+				</div>				
+				<input type="email" placeholder="请输入有效邮箱以便收取电子保单" id="email" name="email">
+				<div class="pos-form">
+					<input type="tel" placeholder="推荐人电话" id="referee" name="referee">		
+				</div>	
+				<button id="showOrderConfirmButton">下一步</button>
+			</div>
+		</div>
+	</section>
+	<section id="orderConfirm">
+		<div class="m-hd">
+			<p>订单确认</p>
+		</div>
+		<div class="m-plst p-order-detail">
+			<ul>
+				<li>
+					<br/>
+					<h1>订单信息</h1>
+					<p>
+						<span>产品名称：</span>
+						<span id="orderConfirmProductName">短期航空意外险</span>
+						<input type="hidden" id="pageCode" value="airlinesShortTermDetail">
+						<input type="hidden" id="orderConfirmProductCode" value="EZV">
+					</p>
+					<p>
+						<span>生效时段：</span>
+						<span id="orderConfirmEfficentTime"></span>
+					</p>
+					<p>
+						<span>保险责任：</span>
+						<span id="punish1"></span>
+					</p>
+					<p style="margin-left:97px" id="punish2">
+					</p>
+					<p>
+						<span>保险期限：</span>
+						<span id="orderConfirmEfficentRange"></span>
+					</p>
+					<p>
+						<span>保费合计：</span>
+						<span id="orderConfirmTotal"></span>
+					</p>
+					<br/>
+				</li>
+				<li>
+					<br/>
+					<h1>投保人暨被保人信息</h1>
+					<p>
+						<span>姓 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+						<span id="orderConfirmUsername"></span>
+					</p>
+					<p>
+						<span>证件类型：</span>
+						<span id="orderConfirmIdType"></span>
+					</p>					
+					<p>	
+						<span>证件号码：</span>
+						<span id="orderConfirmIdentification"></span>
+					</p>
+					<p>
+						<span>手机号码：</span>
+						<span id="orderConfirmMobile"></span>
+					</p>
+					<p>
+						<span>受益人：</span>
+						<span>法定</span>
+					</p>
+					<br/>
+				</li>
+			</ul>
+		</div>
+		<button id="payButton" class="b-btn ma_4 mt_new_65">立即支付</button>
+	</section>
+	
+	<!-- Transparent -->
+	<div class="m-trans J-trans"></div>
+	<!-- End Transparent -->	
+	
+	<!--nav-->
+	<div id="navDiv">	
+	</div>
+	<!--End nav-->
+</body>
+</html>

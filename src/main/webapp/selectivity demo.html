@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312"> 
+        <title>Selectivity.js Demo Use Cases</title>
+        <link href="css/selectivity-full.css" rel="stylesheet">
+        <style>
+            body, input {
+                font-family: Helvetica, sans-serif;
+                font-size: 12px;
+            }
+
+        </style>
+        <script src="js/zepto.js"></script>
+        <script src="js/selectivity-full.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                $('#single-input-without-search').selectivity({
+                    allowClear: false,
+                    items: [{ id: 1, text: '身份证'},{ id: 2, text: '军人证'},{ id: 3, text: '护照' },{ id: 4, text: '台胞证' },{ id: 5, text: '港澳通行证'},{ id: 6, text: '其他' } ],
+                    placeholder: '选择证件',
+                    showSearchInputInDropdown: false
+                });
+                $('#single-input-without-search').selectivity('value', 1);
+            });
+        </script>
+    </head>
+    <body>
+        <h2>Select a single city without a search field</h2>
+        <p><span id="single-input-without-search" class="selectivity-input"></span></p>
+ 
+<input type="button" value="click me" onclick="javascript:alert($('#single-input-without-search').selectivity('value'))">
+<input type="button" value="click me2" onclick="javascript:alert($('#single-input-without-search').selectivity('data').text)">
+        <script>
+            if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+                Array.prototype.forEach.call(document.querySelectorAll('.dev-instructions'), function(element) {
+                    element.style.display = 'block';
+                });
+            }
+        </script>
+    </body>
+</html>

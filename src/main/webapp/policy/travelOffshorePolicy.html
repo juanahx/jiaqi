@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>掌中保</title>
+<script src="../js/jquery-1.5.1.js"></script>
+<script>
+$(window).resize(function(){ 
+    $("#list").css({ 
+        position: "absolute", 
+        left: ($(window).width() - $("#list").outerWidth())/2, 
+        top: ($(window).height() - $("#list").outerHeight())/2 
+    });        
+}); 
+
+$(function(){ 
+    $(window).resize();
+}); 
+</script>
+<style type="text/css">
+<!--
+a:link {
+text-decoration: none;
+}
+a:visited {
+text-decoration: none;
+}
+a:hover {
+text-decoration: none;
+}
+a:active {
+text-decoration: none;
+}
+a {
+ color : #32b16c;
+}
+-->
+</style>
+
+</head>
+<body>
+<div  id="list" style="font-size:40px;">
+<p><a href="境外旅行意外伤害保险条款.html">境外旅行意外伤害保险条款</a></p>
+<p><a href="境外旅行意外伤害医疗保险条款.html">境外旅行意外伤害医疗保险条款</a></p>
+<p><a href="境外旅行紧急救援意外伤害保险条款.html">境外旅行紧急救援意外伤害保险条款</a></p>
+</div>
+<script>
+$(window).resize();
+</script>
+</body>
+</html>
